@@ -1,0 +1,128 @@
+/* General styles for the body */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center; /* Center text horizontally */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f9fa; /* Light background color */
+}
+
+/* Style for the main content container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0; /* Add some margin at the top */
+    padding: 20px;
+    background-color: #fff; /* White background for content */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Style for the app title */
+.app-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Style for page titles */
+h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Style for buttons */
+button {
+    background-color: #b6977d;
+    color: white;
+    padding: 15px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    transition: background-color 0.3s ease;
+}
+
+/* Style for buttons on hover */
+button:hover {
+    background-color: #b7825f;
+}
+
+/* Style for scaling result image */
+.rescaled-image {
+    width: 300px;  /* Set desired width */
+    height: auto;  /* Maintain aspect ratio */
+}
+
+.result-image {
+    width: 300px; /* Adjust the size */
+    height: auto; /* Maintain aspect ratio */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    display: inline-block; /* To align image in the center */
+}
+
+.result-image-container {
+    text-align: center; /* Center the image horizontally */
+    padding: 20px; /* Add space around the image */
+}
+
+.result-image:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.flip-image {
+    transition: transform 0.6s ease; /* Smooth transition for the flip effect */
+}
+
+.flipped {
+    transform: scaleX(-1); /* Flip horizontally */
+}
+
+#flip-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #b6977d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#flip-button:hover {
+    background-color: #b7825f;
+}
+
+/* Style for the footer */
+footer {
+    margin-top: auto; /* Push footer to the bottom */
+    padding: 10px;
+    background-color: #b6977d;
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    button {
+        padding: 10px 15px;
+        font-size: 16px;
+    }
+}

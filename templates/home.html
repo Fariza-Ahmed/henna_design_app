@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Design Preference</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="app-title">ChooseMyHenna</div>
+        <h1>Select Your Design Preference</h1>
+        <form id="preferenceForm" action="{{ url_for('result') }}" method="post">
+            <button type="submit" name="preference" value="geometric">Geometric</button>
+            <button type="submit" name="preference" value="floral">Floral</button>
+            <button type="button" onclick="submitRandom()">Random</button>
+        </form>
+    </div>
+    <footer>
+        &copy; 2024 ChooseMyHenna. All rights reserved.
+    </footer>
+
+    <script>
+        function submitRandom() {
+            const form = document.getElementById('preferenceForm');
+            const randomValue = Math.random() < 0.5 ? 'geometric' : 'floral';
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = 'preference';
+            input.value = randomValue;
+            form.appendChild(input);
+            form.submit();
+        }
+    </script>
+</body>
+</html>
