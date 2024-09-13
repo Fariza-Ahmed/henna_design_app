@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
     <title>Henna Design</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
@@ -10,7 +10,7 @@
         <div class="app-title">ChooseMyHenna</div>
         <h1>Here's your Henna Design</h1>
         <div class="result-image-container">
-            <img src="{{ image }}" class="rescaled-image result-image flip-image" id="result-image" alt="Henna Design">
+            <img src="{{ image }}" class="result-image flip-image" id="result-image" alt="Henna Design">
             <button id="flip-button">Flip Image</button>
             <form action="{{ url_for('start_over') }}">
                 <button onclick="resetForm()">Start Over</button>
@@ -20,16 +20,6 @@
     <footer>
         &copy; 2024 ChooseMyHenna. All rights reserved.
     </footer>
-
-    <script>
-        function resetForm() {
-            document.getElementById("preference-form").reset();  // Resets the form
-        }
-
-        document.getElementById('flip-button').addEventListener('click', function() {
-            const image = document.getElementById('result-image');
-            image.classList.toggle('flipped'); // Toggle the 'flipped' class
-        });
-    </script>
+    <script src="../static/scripts/script.js"></script>
 </body>
 </html>

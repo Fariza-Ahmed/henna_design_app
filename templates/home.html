@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
     <title>Select Design Preference</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
@@ -18,18 +18,6 @@
     <footer>
         &copy; 2024 ChooseMyHenna. All rights reserved.
     </footer>
-
-    <script>
-        function submitRandom() {
-            const form = document.getElementById('preferenceForm');
-            const randomValue = Math.random() < 0.5 ? 'geometric' : 'floral';
-            const input = document.createElement('input');
-            input.type = 'hidden';
-            input.name = 'preference';
-            input.value = randomValue;
-            form.appendChild(input);
-            form.submit();
-        }
-    </script>
+    <script src="../static/scripts/script.js"></script>
 </body>
 </html>

@@ -1,3 +1,9 @@
+/* Ensure html and body use full viewport height */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 /* General styles for the body */
 body {
     font-family: 'Arial', sans-serif;
@@ -6,10 +12,11 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Align items to the top */
+    justify-content: space-between; /* Push footer to the bottom */
     align-items: center;
     min-height: 100vh;
     background-color: #f8f9fa; /* Light background color */
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Style for the main content container */
@@ -18,17 +25,18 @@ body {
     flex-direction: column;
     align-items: center; /* Center items horizontally */
     width: 100%;
-    max-width: 600px;
+    max-width: 100%; /* Ensure it doesn't exceed viewport width */
     margin: 20px 0; /* Add some margin at the top */
     padding: 20px;
-    background-color: #fff; /* White background for content */
+    background-color: #f8f9fa; /* White background for content */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     border-radius: 8px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 /* Style for the app title */
 .app-title {
-    font-size: 24px;
+    font-size: 1.5rem; /* Responsive font size */
     font-weight: bold;
     margin: 10px 0;
     color: #333;
@@ -36,8 +44,8 @@ body {
 
 /* Style for page titles */
 h1 {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 1.25rem; /* Responsive font size */
+    margin-bottom: 10px;
     color: #555;
 }
 
@@ -45,7 +53,7 @@ h1 {
 button {
     background-color: #b6977d;
     color: white;
-    padding: 15px 20px;
+    padding: 0.75rem 1rem; /* Responsive padding */
     margin: 10px;
     border: none;
     border-radius: 5px;
@@ -60,14 +68,9 @@ button:hover {
     background-color: #b7825f;
 }
 
-/* Style for scaling result image */
-.rescaled-image {
-    width: 300px;  /* Set desired width */
-    height: auto;  /* Maintain aspect ratio */
-}
-
 .result-image {
-    width: 300px; /* Adjust the size */
+    width: 100%;
+    max-width: 300px; 
     height: auto; /* Maintain aspect ratio */
     border: 1px solid #ddd; /* Light border */
     border-radius: 8px; /* Rounded corners */
@@ -76,14 +79,9 @@ button:hover {
 }
 
 .result-image-container {
+    position: relative; /* Make it a containing block for the spinner */
     text-align: center; /* Center the image horizontally */
     padding: 20px; /* Add space around the image */
-}
-
-.result-image:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .flip-image {
@@ -96,7 +94,7 @@ button:hover {
 
 #flip-button {
     margin-top: 10px;
-    padding: 10px 20px;
+    padding: 0.75rem 1rem; /* Responsive padding */
     background-color: #b6977d;
     color: white;
     border: none;
@@ -110,19 +108,29 @@ button:hover {
 
 /* Style for the footer */
 footer {
-    margin-top: auto; /* Push footer to the bottom */
     padding: 10px;
     background-color: #b6977d;
     color: white;
     width: 100%;
     text-align: center;
     font-size: 14px;
+    box-sizing: border-box; /* Include padding in the element's total width */
 }
 
 /* Responsive design for smaller screens */
 @media (max-width: 600px) {
     button {
-        padding: 10px 15px;
-        font-size: 16px;
+        padding: 0.5rem 0.75rem; /* Responsive padding */
+        font-size: 1rem; /* Responsive font size */
     }
+
+    #flip-button {
+        padding: 0.5rem 0.75rem; /* Responsive padding */
+        font-size: 1rem; /* Responsive font size */
+    }
+
+    .container {
+        box-shadow: none;
+    }
+
 }
