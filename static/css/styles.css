@@ -53,19 +53,23 @@ h1 {
 button {
     background-color: #b6977d;
     color: white;
-    padding: 0.75rem 1rem; /* Responsive padding */
-    margin: 10px;
+    padding: 1.2em;
+    margin: 10px 0;
     border: none;
-    border-radius: 5px;
+    border-radius: 12px;
+    font-size: 1rem;
     cursor: pointer;
     width: 100%;
     max-width: 300px;
-    transition: background-color 0.3s ease;
+    min-height: 48px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
-/* Style for buttons on hover */
-button:hover {
-    background-color: #b7825f;
+button:active {
+    transform: scale(0.98); /* Slightly shrink the button on press */
+    background-color: #b7825f; /* Darker background on press */
 }
 
 .result-image {
@@ -93,17 +97,25 @@ button:hover {
 }
 
 #flip-button {
-    margin-top: 10px;
-    padding: 0.75rem 1rem; /* Responsive padding */
     background-color: #b6977d;
     color: white;
+    padding: 1.2em;
+    margin: 10px 0;
     border: none;
-    border-radius: 5px;
+    border-radius: 12px;
+    font-size: 1rem;
     cursor: pointer;
+    width: 100%;
+    max-width: 300px;
+    min-height: 48px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add shadow */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
-#flip-button:hover {
-    background-color: #b7825f;
+#flip-button:active {
+    transform: scale(0.98); /* Slightly shrink the button on press */
+    background-color: #b7825f; /* Darker background on press */
 }
 
 /* Style for the footer */
@@ -120,13 +132,13 @@ footer {
 /* Responsive design for smaller screens */
 @media (max-width: 600px) {
     button {
-        padding: 0.5rem 0.75rem; /* Responsive padding */
-        font-size: 1rem; /* Responsive font size */
+        width: 100%; /* Full width on smaller screens */
+        font-size: 1.2rem; /* Slightly bigger font */
     }
 
     #flip-button {
-        padding: 0.5rem 0.75rem; /* Responsive padding */
-        font-size: 1rem; /* Responsive font size */
+        width: 100%; /* Full width on smaller screens */
+        font-size: 1.2rem; /* Slightly bigger font */
     }
 
     .container {
